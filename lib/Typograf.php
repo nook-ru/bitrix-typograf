@@ -13,7 +13,7 @@ class Typograf
         Asset::getInstance()->addJs('/bitrix/js/newkaliningrad.typografru/typograf.js');
 
         $messages = Loc::loadLanguageFile(Path::normalize(__FILE__));
-        echo '<script>BX.message(' . Json::encode($messages, JSON_FORCE_OBJECT|JSON_UNESCAPED_UNICODE) . ');</script>';
+        Asset::getInstance()->addString('<script>BX.message(' . Json::encode($messages, JSON_FORCE_OBJECT|JSON_UNESCAPED_UNICODE) . ');</script>');
     }
 
 }
